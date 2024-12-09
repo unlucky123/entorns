@@ -1,0 +1,40 @@
+//CONTADOR//
+	    <!DOCTYPE html>
+	    <html lang="en">
+	    <head>
+	        <meta charset="UTF-8">
+	        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	        <script src="contador_erroneo.js"></script>
+	        <title>Contador</title>
+	    </head>
+	    <body>
+	        <h1 id="contador">0</h1>
+	        <button onclick="incrementar()">Incrementar</button>
+	    </body>
+	    </html>
+	    function incrementar() {
+	        let contador = 0;
+	        contador++;
+	        document.getElementById("contador").innerText = contador;
+	    }
+	    
+	//RESUELTO//
+	    <!DOCTYPE html>
+	    <html lang="en">
+	    <head>
+	        <meta charset="UTF-8">
+	        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	        <script src="contador_erroneo.js"></script>
+	        <title>Contador</title>
+	    </head>
+	    <body>
+	        <h1 id="contador">0</h1>
+	        <button onclick="incrementar()">Incrementar</button>
+	    </body>
+	    </html>
+	        let contador = 0;
+
+	        function incrementar() {
+	            contador++; 
+	            document.getElementById("contador").innerText = contador;  
+	        }

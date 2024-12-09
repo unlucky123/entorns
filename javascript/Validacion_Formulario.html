@@ -1,0 +1,110 @@
+//VALIDACION FORMULARIO//
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <script src="validacion_erronea.js"></script>
+		    <title>Validación</title>
+		</head>
+		<body>
+		    <form onsubmit="return validarFormulario()">
+		        <label for="nombre">Nombre:</label>
+		        <input id="nombre" type="text" placeholder="Nombre >= 3 carácteres.">
+		        <br><br>
+		        <label for="email">Email:</label>
+		        <input id="email" placeholder="formato: a@a.a">
+		        <br><br>
+		        <button type="submit">Enviar</button>
+		    </form>
+		    <p id="mensaje"></p>
+		</body>
+		</html>
+		function validarFormulario(){
+		    if(validarFormulario2()){
+		        alert("Formulario correcto!");
+		    }else{
+		        alert("Formulario incorrecto!");
+		    }
+		}
+
+		function validarFormulario2() {
+		    const nombre = document.getElementById('nombre').value;
+		    const email = document.getElementById('email').value;
+		    const mensaje = document.getElementById('mensaje');
+
+		    if (nombre.length < 3) {
+		        mensaje.innerText = "El nombre debe tener al menos 3 caracteres.";
+		        mensaje.style.color = "red";
+		        return true; 
+		    }
+
+		    if (!email.includes('@') || !email.includes('.')) {
+		        mensaje.innerText = "El email no es válido.";
+		        mensaje.style.color = "red";
+		        return true; 
+		    }
+
+		    mensaje.innerText = "Formulario enviado correctamente.";
+		    mensaje.style.color = "green";
+		    return false;
+		}
+		
+		//RESUELTO//
+		
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		    <meta charset="UTF-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <script src="validacion_erronea.js"></script>
+		    <title>Validación</title>
+		</head>
+		<body>
+		    <form onsubmit="return validarFormulario()">
+		        <label for="nombre">Nombre:</label>
+		        <input id="nombre" type="text" placeholder="Nombre >= 3 carácteres.">
+		        <br><br>
+		        <label for="email">Email:</label>
+		        <input id="email" placeholder="formato: a@a.a">
+		        <br><br>
+		        <button type="submit">Enviar</button>
+		    </form>
+		    <p id="mensaje"></p>
+		    
+		        function validarFormulario() {
+		            if (validarFormulario2()) {
+		                alert("Formulario correcto!");
+		            } else {
+		                alert("Formulario incorrecto!");
+		            }
+		        }
+
+		        function validarFormulario2() {
+		            const nombre = document.getElementById('nombre').value;
+		            const email = document.getElementById('email').value;
+		            const mensaje = document.getElementById('mensaje');
+
+		            // Validación del nombre
+		            if (nombre.length < 3) {
+		                mensaje.innerText = "El nombre debe tener al menos 3 caracteres.";
+		                mensaje.style.color = "red";
+		                return false; // Cambio: retorna false para evitar envío del formulario
+		            }
+
+		            // Validación del email
+		            if (!email.includes('@') || !email.includes('.')) {
+		                mensaje.innerText = "El email no es válido.";
+		                mensaje.style.color = "red";
+		                return false; // Cambio: retorna false para evitar envío del formulario
+		            }
+
+		            // Si todo es correcto, mensaje verde
+		            mensaje.innerText = "Formulario enviado correctamente.";
+		            mensaje.style.color = "green";
+		            return true; // Cambio: retorna true cuando todo está correcto
+		        }
+		    
+		</body>
+		</html>
